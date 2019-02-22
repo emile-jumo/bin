@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+## Summary
+# Kill the cluster created with the `clustermake` command
+
+docker-machine ls | grep -v NAME | awk '{print $1}' | xargs docker-machine rm -y
